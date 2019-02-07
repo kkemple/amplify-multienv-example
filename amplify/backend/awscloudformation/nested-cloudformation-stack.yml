@@ -81,7 +81,7 @@
 		"authcognito20860e82": {
 			"Type": "AWS::CloudFormation::Stack",
 			"Properties": {
-				"TemplateURL": "https://s3.amazonaws.com/amplify-multi-env-20190207083846-deployment/amplify-cfn-templates/auth/cognito20860e82-cloudformation-template.yml",
+				"TemplateURL": "https://s3.amazonaws.com/amplify-multi-env-20190207105027-deployment/amplify-cfn-templates/auth/cognito20860e82-cloudformation-template.yml",
 				"Parameters": {
 					"identityPoolName": "cognito20860e82_identitypool_20860e82",
 					"allowUnauthenticatedIdentities": false,
@@ -139,7 +139,7 @@
 							"Arn"
 						]
 					},
-					"env": "master"
+					"env": "dev"
 				}
 			}
 		}
