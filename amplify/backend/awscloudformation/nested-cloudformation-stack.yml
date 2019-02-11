@@ -142,6 +142,26 @@
 					"env": "dev"
 				}
 			}
+		},
+		"apiamplifymultienvexample": {
+			"Type": "AWS::CloudFormation::Stack",
+			"Properties": {
+				"TemplateURL": "https://s3.amazonaws.com/amplify-multi-env-20190207105027-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"Parameters": {
+					"AppSyncApiName": "amplifymultienvexample",
+					"AuthCognitoUserPoolId": {
+						"Fn::GetAtt": [
+							"authcognito20860e82",
+							"Outputs.UserPoolId"
+						]
+					},
+					"schemaGraphql": "s3://amplify-multi-env-20190207105027-deployment/amplify-appsync-files/schema.graphql.1549909808099",
+					"ResolverBucket": "amplify-multi-env-20190207105027-deployment",
+					"ResolverRootKey": "amplify-appsync-files",
+					"DeploymentTimestamp": "1549909808099",
+					"env": "dev"
+				}
+			}
 		}
 	},
 	"Outputs": {
