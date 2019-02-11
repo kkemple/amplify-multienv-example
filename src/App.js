@@ -44,8 +44,8 @@ class AddTodo extends Component {
       description: this.state.description
     };
 
-    await onCreate({ input });
     this.setState({ name: "", description: "" });
+    await onCreate({ input });
   }
 
   render() {

@@ -81,7 +81,7 @@
 		"authcognito20860e82": {
 			"Type": "AWS::CloudFormation::Stack",
 			"Properties": {
-				"TemplateURL": "https://s3.amazonaws.com/amplify-multi-env-20190207105027-deployment/amplify-cfn-templates/auth/cognito20860e82-cloudformation-template.yml",
+				"TemplateURL": "https://s3.amazonaws.com/amplify-multi-env-20190207083846-deployment/amplify-cfn-templates/auth/cognito20860e82-cloudformation-template.yml",
 				"Parameters": {
 					"identityPoolName": "cognito20860e82_identitypool_20860e82",
 					"allowUnauthenticatedIdentities": false,
@@ -139,14 +139,14 @@
 							"Arn"
 						]
 					},
-					"env": "dev"
+					"env": "master"
 				}
 			}
 		},
 		"apiamplifymultienvexample": {
 			"Type": "AWS::CloudFormation::Stack",
 			"Properties": {
-				"TemplateURL": "https://s3.amazonaws.com/amplify-multi-env-20190207105027-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"TemplateURL": "https://s3.amazonaws.com/amplify-multi-env-20190207083846-deployment/amplify-cfn-templates/api/cloudformation-template.json",
 				"Parameters": {
 					"AppSyncApiName": "amplifymultienvexample",
 					"AuthCognitoUserPoolId": {
@@ -155,11 +155,11 @@
 							"Outputs.UserPoolId"
 						]
 					},
-					"schemaGraphql": "s3://amplify-multi-env-20190207105027-deployment/amplify-appsync-files/schema.graphql.1549909808099",
-					"ResolverBucket": "amplify-multi-env-20190207105027-deployment",
+					"schemaGraphql": "s3://amplify-multi-env-20190207083846-deployment/amplify-appsync-files/schema.graphql.1549918150793",
+					"ResolverBucket": "amplify-multi-env-20190207083846-deployment",
 					"ResolverRootKey": "amplify-appsync-files",
-					"DeploymentTimestamp": "1549909808099",
-					"env": "dev"
+					"DeploymentTimestamp": "1549918150793",
+					"env": "master"
 				}
 			}
 		}
