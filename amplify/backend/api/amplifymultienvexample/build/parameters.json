@@ -1,0 +1,6 @@
+{
+    "CreateAPIKey": 0,
+    "AppSyncApiName": "amplifymultienvexample",
+    "S3DeploymentBucket": "amplify-amplify-multi-env-prod-103455-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/3f2da1602b4fd98a33ac32a9fb38f91470093fed"
+}
