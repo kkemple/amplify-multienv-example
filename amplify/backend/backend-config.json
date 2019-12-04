@@ -1,16 +1,10 @@
 {
-	"auth": {
-		"cognito20860e82": {
-			"service": "Cognito",
-			"providerPlugin": "awscloudformation"
-		}
-	},
 	"api": {
 		"amplifymultienvexample": {
 			"service": "AppSync",
 			"providerPlugin": "awscloudformation",
 			"output": {
-				"securityType": "AMAZON_COGNITO_USER_POOLS"
+				"securityType": "API_KEY"
 			}
 		}
 	}

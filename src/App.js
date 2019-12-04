@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Amplify, { graphqlOperation } from "aws-amplify";
-import { withAuthenticator, Connect } from "aws-amplify-react";
+import { Connect } from "aws-amplify-react";
 
 import "./App.css";
 
@@ -122,4 +122,4 @@ class App extends Component {
   }
 }
 
-export default withAuthenticator(App, true);
+export default App;
