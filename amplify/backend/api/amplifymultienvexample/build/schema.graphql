@@ -14,7 +14,7 @@ type ModelTodoConnection {
   nextToken: String
 }
 
-input ModelStringFilterInput {
+input ModelStringInput {
   ne: String
   eq: String
   le: String
@@ -25,9 +25,12 @@ input ModelStringFilterInput {
   notContains: String
   between: [String]
   beginsWith: String
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
 }
 
-input ModelIDFilterInput {
+input ModelIDInput {
   ne: ID
   eq: ID
   le: ID
@@ -38,41 +41,56 @@ input ModelIDFilterInput {
   notContains: ID
   between: [ID]
   beginsWith: ID
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
 }
 
-input ModelIntFilterInput {
+input ModelIntInput {
   ne: Int
   eq: Int
   le: Int
   lt: Int
   ge: Int
   gt: Int
-  contains: Int
-  notContains: Int
   between: [Int]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
 }
 
-input ModelFloatFilterInput {
+input ModelFloatInput {
   ne: Float
   eq: Float
   le: Float
   lt: Float
   ge: Float
   gt: Float
-  contains: Float
-  notContains: Float
   between: [Float]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
 }
 
-input ModelBooleanFilterInput {
+input ModelBooleanInput {
   ne: Boolean
   eq: Boolean
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelSizeInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
 }
 
 input ModelTodoFilterInput {
-  id: ModelIDFilterInput
-  name: ModelStringFilterInput
-  description: ModelStringFilterInput
+  id: ModelIDInput
+  name: ModelStringInput
+  description: ModelStringInput
   and: [ModelTodoFilterInput]
   or: [ModelTodoFilterInput]
   not: ModelTodoFilterInput
@@ -100,9 +118,30 @@ input DeleteTodoInput {
 }
 
 type Mutation {
-  createTodo(input: CreateTodoInput!): Todo
-  updateTodo(input: UpdateTodoInput!): Todo
-  deleteTodo(input: DeleteTodoInput!): Todo
+  createTodo(input: CreateTodoInput!, condition: ModelTodoConditionInput): Todo
+  updateTodo(input: UpdateTodoInput!, condition: ModelTodoConditionInput): Todo
+  deleteTodo(input: DeleteTodoInput!, condition: ModelTodoConditionInput): Todo
+}
+
+input ModelTodoConditionInput {
+  name: ModelStringInput
+  description: ModelStringInput
+  and: [ModelTodoConditionInput]
+  or: [ModelTodoConditionInput]
+  not: ModelTodoConditionInput
+}
+
+enum ModelAttributeTypes {
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+  _null
 }
 
 type Subscription {
